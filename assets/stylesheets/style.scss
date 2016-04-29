@@ -38,3 +38,24 @@ body {
     float: right;
   }
 }
+
+@media only screen and (max-width : 990px) {
+    .well {
+      background-color: rgba(249, 249, 249, 0.9);
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+    .drop {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    .cloud {
+      width: 40px!important;
+      margin-left: 20px;
+      margin-top: 14px;
+      float: right;
+    }
+    .drop-button {
+      float: right;
+    }
+}
