@@ -48,7 +48,7 @@
     "react-bootstrap": "^0.29.2",
     "react-chartjs": "^0.7.3",
     "react-checkbox-list": "0.0.2",
-    "react-cropper": "^0.6.2",
+    "react-cropper": "^0.8.0",
     "react-dom": "~0.14.6",
     "react-dropzone": "^3.4.0",
     "react-fa": "^4.0.0",
