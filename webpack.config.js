@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -27,7 +28,10 @@ module.exports = {
       title: 'Carrefour',
       filename: 'index.html',
       template: 'index.template.html',
-      favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico')
+      favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico'),
+    }),
+    new StatsWriterPlugin({
+      filename: "stats.json" // Default
     })
   ],
   module: {
