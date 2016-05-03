@@ -13,7 +13,7 @@
     "url": "https://github.com/emmenko/redux-react-router-async-example/issues"
   },
   "scripts": {
-    "build": "npm run clean && npm run lint && webpack",
+    "build": "npm run clean && npm run lint && webpack --progress",
     "build:i18n": "rimraf _translations && BABEL_ENV=i18n babel lib > /dev/null",
     "build:i18n:langs": "npm run build:i18n && babel-node scripts/i18nToXliff.js",
     "clean": "rimraf dist",

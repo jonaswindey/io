@@ -28,7 +28,7 @@ module.exports = {
     }),
     new ExtractTextPlugin('app.css', { allChunks: true }),
     new HtmlWebpackPlugin({
-      title: 'Carrefour',
+      title: '3NIT.io',
       filename: 'index.html',
       template: 'index.template.html',
       favicon: path.join(__dirname, 'assets/images/favicon.ico'),
