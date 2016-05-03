@@ -1,26 +1,19 @@
 const debug = require('debug')
-const superstatic = require('superstatic').server
+const express = require('express')
+const path = require('path')
+const port = process.env.APP_PORT_WEB || 8080
+const app = express()
+
 debug.enable('dev')
 
-if (!process.env.APP_PORT_WEB) debug('dev')(`No APP_PORT_WEB specified`)
-else {
-  const app = superstatic(
-    {
-      port: process.env.APP_PORT_WEB,
-      config: {
-        public: './dist',
-        rewrites: [
-          {'source':'/**','destination':'/index.html'},
-          {'source':'/**.js','destination':'/'},
-        ]
-      },
-      cwd: __dirname,
-      gzip: true,
-      debug: false
-    }
-  )
-  app.listen(function(err) {
-    if (err) debug('dev')(err)
-    debug('dev')(`Static server started on port ${process.env.APP_PORT_WEB}`)
-  })
-}
+app.use(express.static(__dirname + '/dist'))
+
+app.get('*', function (request, response){
+  response.sendFile(path.resolve(__dirname, 'dist', 'index.html'))
+})
+
+app.listen(port)
+app.listen(function(err) {
+  if (err) debug('dev')(err)
+  debug('dev')(`Static server started on port ${port}`)
+})

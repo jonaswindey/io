@@ -80,7 +80,6 @@
     "simple-date-picker": "^0.1.0",
     "socket.io-client": "^1.4.4",
     "superagent": "^1.7.1",
-    "superstatic": "^4.0.2",
     "tcomb-form": "^0.8.1",
     "url-loader": "^0.5.7",
     "whatwg-fetch": "~0.10.1"
