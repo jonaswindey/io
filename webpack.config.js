@@ -29,9 +29,10 @@ module.exports = {
       filename: 'index.html',
       template: 'index.template.html',
       favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico'),
+      build: new Date(),
     }),
     new StatsWriterPlugin({
-      filename: "stats.json" // Default
+      filename: "stats.json"
     })
   ],
   module: {
