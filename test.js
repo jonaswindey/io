@@ -11,6 +11,8 @@ import cloud from 'assets/images/cloud.png'
 //const API = constants.API
 //import * as storage from 'persistence/storage'
 import Loader from 'react-loader'
+import {constants} from 'config/constants'
+const {DEFAULT_PROJECT} = constants
 
 /*const preloader = () => {
   return (<div style={{position: 'relative'}}>
@@ -169,7 +171,7 @@ class Product extends Component {
       view[i] = binary.charCodeAt(i)
 
     const blob = new Blob( [view], { fileName: this.state.fileName, type: 'image/jpg' })
-    this.props.dispatch(fileActions.addFile('testproject', blob, this.state.fileName))
+    this.props.dispatch(fileActions.addFile(DEFAULT_PROJECT, blob, this.state.fileName))
 
     this.setState({showPreview: false, src: null,preview: null})
   }

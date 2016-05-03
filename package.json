@@ -26,6 +26,8 @@
     "storybook": "start-storybook -p 9001"
   },
   "dependencies": {
+    "bootstrap": "^3.3.6",
+    "bootswatch": "^3.3.6",
     "change-case": "^2.3.1",
     "chart.js": "1.1.1",
     "classnames": "~2.2.3",
@@ -58,6 +60,7 @@
     "react-loader": "^2.2.0",
     "react-localstorage": "^0.2.9",
     "react-overlays": "^0.6.3",
+    "react-photoswipe": "^1.0.0",
     "react-progress-button": "^4.0.0",
     "react-pure-render": "~1.0.2",
     "react-radio-group": "^2.2.0",
@@ -108,6 +111,8 @@
     "gh-pages": "^0.8.0",
     "glob": "^6.0.4",
     "html-webpack-plugin": "^1.7.0",
+    "less": "^2.6.1",
+    "less-loader": "^2.2.3",
     "mkdirp": "^0.5.1",
     "react-transform-catch-errors": "^1.0.1",
     "react-transform-hmr": "^1.0.1",

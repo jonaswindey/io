@@ -42,7 +42,8 @@ module.exports = {
       { test: /\.jsx$/, loaders: ['babel'], include: path.join(__dirname, 'lib') },
       { test: /\.scss$/, loader: 'style!css!sass'},
       { test: /\.(jpe?g|png|gif|svg|woff|woff2|eot|ttf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url?limit=10000&name=[sha512:hash:base64:7].[ext]'}
+        loader: 'url?limit=10000&name=[sha512:hash:base64:7].[ext]'},
+      { test: /\.less$/, loader: "style!css!less" },
     ]
   },
   cssnext: {
