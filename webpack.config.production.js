@@ -34,7 +34,6 @@ module.exports = {
       favicon: path.join(__dirname, 'assets/images/favicon.ico'),
       build: new Date(),
       minify: {
-	        removeComments: true,
 	        collapseWhitespace: true
       }
     })
