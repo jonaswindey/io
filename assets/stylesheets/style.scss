@@ -1,6 +1,11 @@
 body {
   padding-top: 85px;
 }
+@media only screen and (max-width : 767px) {
+  body {
+    padding-top: 55px;
+  }
+}
 .container {
   max-width: 1050px;
 }
@@ -41,8 +46,13 @@ body {
   }
 }
 
-@media only screen and (max-width : 990px) {
+.fileAdder {
+  padding-top: 10px;
+}
+
+@media only screen and (max-width : 767px) {
     .well {
+      margin-bottom: 0px;
     }
     .drop {
       padding-top: 0px;
@@ -56,5 +66,9 @@ body {
     }
     .drop-button {
       float: right;
+    }
+    .fileAdder {
+      padding-top: 5px;
+      -webkit-transform: translate3d(0, 0, 0);
     }
 }
