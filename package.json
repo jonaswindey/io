@@ -55,7 +55,7 @@
     "react-cropper": "^0.8.0",
     "react-dom": "~15.0.2",
     "react-dropzone": "^3.4.0",
-    "react-fa": "^4.0.0",
+    "react-fa": "^4.1.1",
     "react-image-gallery": "^0.6.0",
     "react-imageloader": "^2.1.0",
     "react-intl": "2.1.2",
