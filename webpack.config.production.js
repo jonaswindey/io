@@ -48,8 +48,5 @@ module.exports = {
         loader: 'url?limit=10000&name=[sha512:hash:base64:7].[ext]'},
       { test: /\.less$/, loader: "style!css!less" },
     ]
-  },
-  cssnext: {
-    browsers: 'last 2 versions'
   }
 };
