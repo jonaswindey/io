@@ -1,8 +1,6 @@
-# Run project
+# 3NIT.io
 
 ```
 npm i
-npm run start:be
-npm run start:pl
-npm run start:it
+npm start
 ```
