@@ -2,15 +2,15 @@
   "name": "Carrefour",
   "version": "0.0.1",
   "description": "",
-  "homepage": "https://github.com/emmenko/redux-react-router-async-example",
-  "author": "Nicola Molinari <emmenko@gmail.com>",
+  "homepage": "https://github.com/trinit/3nit-io",
+  "author": "Jonas Windey <jonas@3nit.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/emmenko/redux-react-router-async-example.git"
+    "url": "https://github.com/trinit/3nit-io.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/emmenko/redux-react-router-async-example/issues"
+    "url": "https://github.com/trinit/3nit-io/issues"
   },
   "scripts": {
     "build": "npm run clean && npm run lint && webpack --progress",
@@ -25,6 +25,7 @@
     "test": "mocha",
     "test:watch": "mocha -w",
     "coverage": "istanbul cover _mocha -- -R spec",
+    "coverage:check": "istanbul check-coverage _mocha -- -R spec",
     "coverage:open": "istanbul cover _mocha -- -R spec && open coverage/lcov-report/*.html"
   },
   "dependencies": {
