@@ -1,5 +1,6 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
+import fs from 'fs'
 
 import * as fileActions from 'actions/files'
 import {constants} from 'config/constants'
@@ -90,6 +91,37 @@ describe('file actions', () => {
     expect(store.getActions()).toEqual([
       {type: constants.REMOVE_FILE_START},
       {type: constants.REMOVE_FILE_FAILED},
+    ])
+  })
+
+  it('should upload a single file', async () => {
+    nock(API).post('/in/jonas/fileId').reply({})
+    nock(API).post('/in/jonas').reply({})
+    const file = fs.createReadStream('test.txt')
+    await store.dispatch(fileActions.uploadFile(file, 'test', 'fileId'))
+    expect(store.getActions()).toEqual([
+      {type: constants.UPLOAD_START, queue: 1},
+    ])
+  })
+
+  it('should upload multiple files', async () => {
+    nock(API).post('/in/jonas/fileId').reply({})
+    nock(API).post('/in/jonas').reply({})
+    const file1 = fs.createReadStream('test.txt')
+    const file2 = fs.createReadStream('test2.txt')
+    await store.dispatch(fileActions.uploadFiles([file1, file2]))
+    expect(store.getActions()).toEqual([
+      {type: constants.UPLOAD_START, queue: 2},
+    ])
+  })
+
+  it('should throw error when upload url is invalid ', async () => {
+    nock(API).post('/in/jonas/fileId').reply(500)
+    nock(API).post('/in/jonas').reply(500)
+    const file = fs.createReadStream('test.txt')
+    await store.dispatch(fileActions.uploadFile(file, 'test', 'fileId'))
+    expect(store.getActions()).toEqual([
+      {type: constants.UPLOAD_START, queue: 1},
     ])
   })
 
