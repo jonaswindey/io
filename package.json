@@ -24,7 +24,8 @@
     "start:devtools": "npm run build && DEVTOOLS=true node server.js",
     "test": "mocha",
     "test:watch": "mocha -w",
-    "storybook": "start-storybook -p 9001"
+    "coverage": "istanbul cover _mocha -- -R spec",
+    "coverage:open": "istanbul cover _mocha -- -R spec && open coverage/lcov-report/*.html"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
@@ -98,6 +99,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.6.1",
+    "blanket": "^1.2.3",
     "css-loader": "^0.23.1",
     "eslint": "^2.9.0",
     "eslint-plugin-react": "^5.1.1",
@@ -106,6 +108,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "glob": "^7.0.3",
     "html-webpack-plugin": "2.16.1",
+    "istanbul": "1.0.0-alpha.2",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "mkdirp": "^0.5.1",

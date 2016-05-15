@@ -13,6 +13,7 @@ dist
 project.xcworkspace
 build
 cache
+coverage
 
 # Xcode
 #
