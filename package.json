@@ -26,7 +26,8 @@
     "test:watch": "mocha -w",
     "coverage": "istanbul cover _mocha -- -R spec",
     "coverage:check": "istanbul check-coverage _mocha -- -R spec",
-    "coverage:open": "istanbul cover _mocha -- -R spec && open coverage/lcov-report/*.html"
+    "coverage:open": "istanbul cover _mocha -- -R spec && open coverage/lcov-report/*.html",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
@@ -101,6 +102,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-runtime": "^6.6.1",
     "blanket": "^1.2.3",
+    "coveralls": "^2.11.9",
     "css-loader": "^0.23.1",
     "eslint": "^2.9.0",
     "eslint-plugin-react": "^5.1.1",
