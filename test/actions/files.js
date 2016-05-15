@@ -97,7 +97,7 @@ describe('file actions', () => {
   it('should upload a single file', async () => {
     nock(API).post('/in/jonas/fileId').reply({})
     nock(API).post('/in/jonas').reply({})
-    const file = fs.createReadStream('test.txt')
+    const file = fs.createReadStream('./../../README.md')
     await store.dispatch(fileActions.uploadFile(file, 'test', 'fileId'))
     expect(store.getActions()).toEqual([
       {type: constants.UPLOAD_START, queue: 1},
@@ -107,8 +107,8 @@ describe('file actions', () => {
   it('should upload multiple files', async () => {
     nock(API).post('/in/jonas/fileId').reply({})
     nock(API).post('/in/jonas').reply({})
-    const file1 = fs.createReadStream('test.txt')
-    const file2 = fs.createReadStream('test2.txt')
+    const file1 = fs.createReadStream('./../../README.md')
+    const file2 = fs.createReadStream('./../../README.md')
     await store.dispatch(fileActions.uploadFiles([file1, file2]))
     expect(store.getActions()).toEqual([
       {type: constants.UPLOAD_START, queue: 2},
