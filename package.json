@@ -24,9 +24,9 @@
     "start:devtools": "npm run build && DEVTOOLS=true node server.js",
     "test": "NODE_ENV=test && mocha",
     "test:watch": "NODE_ENV=test && mocha -w",
-    "coverage": "istanbul cover _mocha -- -R spec",
-    "coverage:open": "istanbul cover _mocha -- -R spec && open coverage/lcov-report/*.html",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coverage": "NODE_ENV=test && istanbul cover _mocha -- -R spec",
+    "coverage:open": "NODE_ENV=test && istanbul cover _mocha -- -R spec && open coverage/lcov-report/*.html",
+    "coveralls": "NODE_ENV=test && istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
