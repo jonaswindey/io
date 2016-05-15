@@ -1,5 +1,5 @@
 {
-  "name": "Carrefour",
+  "name": "3nit.io",
   "version": "0.0.1",
   "description": "",
   "homepage": "https://github.com/trinit/3nit-io",
@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/trinit/3nit-io.git"
   },
-  "license": "MIT",
+  "license": "GPL v3",
   "bugs": {
     "url": "https://github.com/trinit/3nit-io/issues"
   },
@@ -22,8 +22,8 @@
     "lint": "eslint lib",
     "start": "npm run build && node server.js",
     "start:devtools": "npm run build && DEVTOOLS=true node server.js",
-    "test": "mocha",
-    "test:watch": "mocha -w",
+    "test": "NODE_ENV=test && mocha",
+    "test:watch": "NODE_ENV=test && mocha -w",
     "coverage": "istanbul cover _mocha -- -R spec",
     "coverage:open": "istanbul cover _mocha -- -R spec && open coverage/lcov-report/*.html",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"

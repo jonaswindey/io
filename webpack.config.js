@@ -25,7 +25,7 @@ module.exports = {
       '__DEVTOOLS__': process.env.DEVTOOLS === 'true' ? true : false
     }),
     new HtmlWebpackPlugin({
-      title: 'Carrefour',
+      title: '3nit.io',
       filename: 'index.html',
       template: 'index.template.html',
       favicon: path.join(__dirname, 'assets', 'images', 'favicon.ico'),
