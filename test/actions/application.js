@@ -11,14 +11,6 @@ const mockStore = configureMockStore(middlewares)
 const {API} = constants
 
 const initialStore = {
-  files: {
-    files: [],
-    filesLoaded: false,
-    fileAdding: false,
-    modifiedFile: {},
-    project: constants.DEFAULT_PROJECT,
-    queue: 0,
-  }
 }
 let store = {}
 
