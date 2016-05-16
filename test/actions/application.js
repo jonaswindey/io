@@ -37,7 +37,6 @@ describe('file actions', () => {
 
   it('should fail with invalid login', async () => {
 
-    console.log('Env: ' + process.env.NODE_ENV)
     nock(API).get(filesURI()).reply(200, { items: [{_id: -1}] })
 
     await store.dispatch(applicationActions.logIn({email: 'test@test.com', password: 'test'}))
