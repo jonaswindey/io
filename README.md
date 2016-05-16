@@ -1,4 +1,4 @@
-# 3NIT.io [![Build Status](https://travis-ci.org/trinit/3nit-io.svg?branch=master)](https://travis-ci.org/trinit/3nit-io) [![Coverage Status](https://coveralls.io/repos/github/trinit/3nit-io/badge.svg?branch=master&test)](https://coveralls.io/github/trinit/3nit-io?branch=master) [![License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)](https://img.shields.io/badge/license-GPL%20v3-blue.svg) [![Powered by](https://img.shields.io/badge/powered%20by-React-yellowgreen.svg)](https://img.shields.io/badge/powered%20by-React-yellowgreen.svg) [![Depencencies](https://david-dm.org/trinit/3nit-io.svg)](https://david-dm.org/trinit/3nit-io.svg)
+# 3NIT.io [![Build Status](https://travis-ci.org/trinit/io.svg?branch=master)](https://travis-ci.org/trinit/io) [![Coverage Status](https://coveralls.io/repos/github/trinit/io/badge.svg?branch=master&test)](https://coveralls.io/github/trinit/io?branch=master) [![License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)](https://img.shields.io/badge/license-GPL%20v3-blue.svg) [![Powered by](https://img.shields.io/badge/powered%20by-React-yellowgreen.svg)](https://img.shields.io/badge/powered%20by-React-yellowgreen.svg) [![Depencencies](https://david-dm.org/trinit/io.svg)](https://david-dm.org/trinit/io.svg)
 
 ![screen shot 2016-05-15 at 19 24 54](https://cloud.githubusercontent.com/assets/3637300/15275692/c1ca8b22-1ad2-11e6-9647-521406a9dbbb.png)
 
@@ -15,7 +15,7 @@
 * [react-intl](https://github.com/yahoo/react-intl)
 
 
-### [Demo](http://trinit.github.io/3nit-io/)
+### [Demo](http://trinit.github.io/io)
 ```
 npm i
 npm start
