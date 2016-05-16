@@ -18,15 +18,15 @@
     "build:i18n:langs": "npm run build:i18n && babel-node scripts/i18nToXliff.js",
     "clean": "rimraf dist",
     "deploy": "npm run dist && gh-pages -d dist",
-    "dist": "npm test && npm run clean && NODE_ENV=production webpack --debug --config webpack.config.production.js",
+    "dist": "export NODE_ENV=production && npm test && npm run clean && webpack --debug --config webpack.config.production.js",
     "lint": "eslint lib",
     "start": "npm run build && node server.js",
     "start:devtools": "npm run build && DEVTOOLS=true node server.js",
-    "test": "NODE_ENV=test && mocha",
-    "test:watch": "NODE_ENV=test && mocha -w",
-    "coverage": "NODE_ENV=test && istanbul cover _mocha -- -R spec",
+    "test": "export NODE_ENV=test && mocha",
+    "test:watch": "export NODE_ENV=test && mocha -w",
+    "coverage": "export NODE_ENV=test && istanbul cover _mocha -- -R spec",
     "coverage:open": "NODE_ENV=test && istanbul cover _mocha -- -R spec && open coverage/lcov-report/*.html",
-    "coveralls": "NODE_ENV=test && istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coveralls": "export NODE_ENV=test && istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
