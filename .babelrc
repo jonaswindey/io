@@ -2,6 +2,7 @@
   "plugins": ["transform-runtime", "transform-decorators-legacy",
     ["babel-plugin-module-alias", [
       { "src": "./assets", "expose": "assets" },
+      { "src": "./test", "expose": "test" },
       { "src": "./lib/config", "expose": "config" },
       { "src": "./lib/persistence", "expose": "persistence" },
       { "src": "./lib/actions", "expose": "actions" },
