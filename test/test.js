@@ -1,5 +1,8 @@
 import debug from 'debug'
 
+import {should} from 'chai'
+should()
+
 // debug.enable('dev')
 debug.enable('test')
 
