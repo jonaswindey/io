@@ -2,15 +2,15 @@
   "name": "3nit.io",
   "version": "0.0.1",
   "description": "",
-  "homepage": "https://github.com/trinit/3nit-io",
+  "homepage": "https://github.com/trinit/io",
   "author": "Jonas Windey <jonas@3nit.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/trinit/3nit-io.git"
+    "url": "https://github.com/trinit/io.git"
   },
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/trinit/3nit-io/issues"
+    "url": "https://github.com/trinit/io/issues"
   },
   "scripts": {
     "build": "npm run clean && npm run lint && webpack --progress",
