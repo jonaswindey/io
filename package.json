@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/trinit/3nit-io.git"
   },
-  "license": "GPL v3",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/trinit/3nit-io/issues"
   },
@@ -105,7 +105,7 @@
     "coveralls": "^2.11.9",
     "css-loader": "^0.23.1",
     "enzyme": "^2.3.0",
-    "eslint": "^2.9.0",
+    "eslint": "^2.10.1",
     "eslint-plugin-react": "^5.1.1",
     "expect": "^1.20.1",
     "express": "^4.13.4",
