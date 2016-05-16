@@ -22,9 +22,6 @@ const initialStore = {
 }
 let store = {}
 
-const filesURI = (project = initialStore.files.project) =>
-  `/files?pagesize=0&filters=project:${project}%2Bstatus:active`
-
 describe('file actions', () => {
 
   afterEach(() => {
@@ -35,9 +32,35 @@ describe('file actions', () => {
     store = mockStore(initialStore)
   })
 
+  it('should successfully login', async () => {
+
+    nock(API).post('/auth').reply(200, {token: '123'})
+    nock(API).get('/auth/profile').reply(200, {})
+
+    await store.dispatch(applicationActions.logIn({email: 'test@test.com', password: 'test'}))
+    expect(store.getActions()).toEqual([
+      {type: constants.LOG_IN_START},
+      {type: constants.LOG_IN, token: 'bearer 123'},
+      {type: constants.FETCH_PROFILE_START},
+    ])
+  })
+
+  it('should successfully login but fail with empty/undefined token', async () => {
+
+    nock(API).post('/auth').reply(200, {})
+    nock(API).get('/auth/profile').reply(200, {})
+
+    await store.dispatch(applicationActions.logIn({email: 'test@test.com', password: 'test'}))
+    expect(store.getActions()).toEqual([
+      {type: constants.LOG_IN_START},
+      {type: constants.LOG_IN, token: 'bearer undefined'},
+      {type: constants.FETCH_PROFILE_START},
+    ])
+  })
+
   it('should fail with invalid login', async () => {
 
-    nock(API).get(filesURI()).reply(200, { items: [{_id: -1}] })
+    nock(API).post('/auth').reply(500, {})
 
     await store.dispatch(applicationActions.logIn({email: 'test@test.com', password: 'test'}))
     expect(store.getActions()).toEqual([
