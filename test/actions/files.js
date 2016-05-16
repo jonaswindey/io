@@ -38,7 +38,6 @@ describe('file actions', () => {
 
   it('should fetch files', async () => {
     nock(API).get(filesURI()).reply(200, { items: [{_id: -1}] })
-
     await store.dispatch(fileActions.fetchFiles())
     expect(store.getActions()).toEqual([
       {type: constants.FETCH_FILES_START},

@@ -33,10 +33,8 @@ describe('file actions', () => {
   })
 
   it('should successfully login', async () => {
-
     nock(API).post('/auth').reply(200, {token: '123'})
     nock(API).get('/auth/profile').reply(200, {})
-
     await store.dispatch(applicationActions.logIn({email: 'test@test.com', password: 'test'}))
     expect(store.getActions()).toEqual([
       {type: constants.LOG_IN_START},
@@ -46,10 +44,8 @@ describe('file actions', () => {
   })
 
   it('should successfully login but fail with empty/undefined token', async () => {
-
     nock(API).post('/auth').reply(200, {})
     nock(API).get('/auth/profile').reply(200, {})
-
     await store.dispatch(applicationActions.logIn({email: 'test@test.com', password: 'test'}))
     expect(store.getActions()).toEqual([
       {type: constants.LOG_IN_START},
@@ -59,13 +55,29 @@ describe('file actions', () => {
   })
 
   it('should fail with invalid login', async () => {
-
     nock(API).post('/auth').reply(500, {})
-
     await store.dispatch(applicationActions.logIn({email: 'test@test.com', password: 'test'}))
     expect(store.getActions()).toEqual([
       {type: constants.LOG_IN_START},
       {type: constants.LOG_IN_FAILED},
+    ])
+  })
+
+  it('should return empty user when fetch profile is called without token', () => {
+    store.dispatch(applicationActions.fetchProfile({}))
+    expect(store.getActions()).toEqual([
+      {type: constants.FETCH_PROFILE_START},
+      {type: constants.FETCH_PROFILE_COMPLETE, user: {}},
+    ])
+  })
+
+  it('should throw error when fetch profile url is invalid', async () => {
+    nock(API).get('/auth/profile').reply(500, {})
+    await store.dispatch(applicationActions.fetchProfile({token: '123'}))
+    expect(store.getActions()).toEqual([
+      {type: constants.FETCH_PROFILE_START},
+      {type: constants.FETCH_PROFILE_COMPLETE, user: {}},
+      {type: constants.FETCH_PROFILE_FAILED},
     ])
   })
 
