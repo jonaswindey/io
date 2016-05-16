@@ -62,7 +62,7 @@ describe('<Login />', () => {
     const store = mockStore({})
     const context = {store}
     const component = shallow(<Login application={application} />, {context})
-    component.find({id: 'loginButton'}).simulate('click')
+    component.find({id: 'loginButton'}).simulate('click', new Event('click'))
     expect(store.getActions()).toEqual([{type: constants.LOG_IN_START}])
   })
 
